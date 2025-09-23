@@ -28,7 +28,7 @@ def determine_file_type(filename: str) -> FileType:
     _, file_extension = os.path.splitext(filename)
     return {
         '.cls': FileType.CLS,
-        '.example': FileType.EXAMPLE,
+        '.example': FileType.CONFIG,
         '.eyaml': FileType.YAML,
         '.go': FileType.GO,
         '.java': FileType.JAVA,
