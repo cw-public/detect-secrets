@@ -59,3 +59,8 @@ Marks a line as an exception so it will be ignored in future scans.
 `detect-secrets scan > .secrets.baseline`
 
 Creates a new baseline including all currently detected secrets, ensuring they won’t block future commits.
+
+> **ℹ️ Info**  
+> Any baseline created inside VS Code using PowerShell will result in UTF-16 encoding, which is undesired.  
+> Either run `detect-secrets scan > .secrets.baseline` using CMD to ensure UTF-8 encoding, or save the created baseline as UTF-8 and reload the window (bottom right of the editor).
+
