@@ -1,5 +1,10 @@
 # Overview
 
+A pre-commit hook using the detect-secrets package helps prevent accidental leaks of sensitive information before a commit.
+The main component of this tool is the secrets-baseline, which acts as a whitelist for sensitive data.
+Any secrets not listed in this file (ideally it should remain empty) are scanned by various filters and plugins.
+These scan the entire repository for potential secrets and block possible leak unless they are explicitly whitelisted in the secrets-baseline, since some secrets may be required for the functionality of the code.
+
 <img width="1684" height="861" alt="image" src="https://github.com/user-attachments/assets/e918ed3d-6ac2-4465-bd7c-6f340481a073" />
 
 
@@ -13,14 +18,12 @@ We provide an installation script that automates the following steps, so they do
 
 To execute the script, download it [here], navigate to its location, open a PowerShell session, and run:
 
-`.\bootstrap.ps1`
+`.\secrets-bootstrap.ps1`
 
 
 # Setup (Required for every new project)
 
-In VS Code, open a new terminal (if you already have a session running, please open an additional one).
-
-Run the following command:
+In VS Code run the following command:
 
 `hook-init`
 
@@ -28,10 +31,6 @@ This will create two new files in your project:
 
 - .pre-commit-config.yaml
 - .secrets.baseline
-
-Open the file .pre-commit-config.yaml and add the following comment in line 3, next to the rev parameter:
-
-`# pragma: allowlist secret`
 
 
 If you are working in a repository that already contains these two files, it is recommended to run hook-init *again*.
