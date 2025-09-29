@@ -16,7 +16,7 @@ We provide an installation script that automates the following steps, so they do
 - Setup of the **Pre-commit Framework**
 - Installation of **detect-secrets**
 
-To execute the script, download it [here](bash/detect-secrets/secrets-bootstrap.ps1), navigate to its location, open a PowerShell session, and run:
+To execute the script, download it [here](https://github.com/cw-modernapplicationplatform/tools/tree/master/bash/detect-secrets), navigate to its location, open a PowerShell session, and run:
 
 `.\secrets-bootstrap.ps1`
 
