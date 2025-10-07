@@ -24,7 +24,6 @@ To execute the script, download it [here](https://github.com/cw-modernapplicatio
 # Setup (Required for every new project)
 
 In VS Code run the following command:
-
 `hook-init`
 
 This will create two new files in your project:
@@ -36,6 +35,12 @@ This will create two new files in your project:
 If you are working in a repository that already contains these two files, it is recommended to run hook-init *again*.
 
 Stage both `.pre-commit-config.yaml` and `.secrets.baseline` to complete the setup.
+
+> **ℹ️ Info**
+> 
+> If `hook-init` is not found in the current Shell Session, you should be able to update the tools by running
+> `. $PFOPILE`
+> `Update-SessionPath` 
 
 # Usage
 
