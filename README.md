@@ -212,14 +212,17 @@ If you are working in a repository that already contains these two files, it is 
 > **⚠️ WARNING**
 > 
 > The Scope of detect-secrets is narrowed down to ONLY Git-tracked files. Anything that got created recently inside the new Session and hasnt been pushed
-> wont show up in a basic `detect-secrets scan > .secrets.baseline` or `detect-secrets scan .` means if you run of those two commands and dont see specific
+> wont show up in a basic `detect-secrets scan > .secrets.baseline` or `detect-secrets scan .` means if you run one of those two commands and dont see specific
 > files, make sure that they have been staged !
 
 > **ℹ️ Info**
 > 
 > If `hook-init` is not found in the current Shell Session, you should be able to update the tools by running
 > `. $PFOPILE`
-> `Update-SessionPath` 
+> `Update-SessionPath`
+
+`Update-SessionPath` is another custom function inside `$PROFILE` the purpose of this function is to enable `hook-init` by communicating the updated PATH variables in the current working Session.
+The reason for that is to avoid having to restart VSCode.
 
 # Usage
 
@@ -237,10 +240,13 @@ You then have two ways to deal with them:
 
 
 Marks a line as an exception so it will be ignored in future scans.
+
 `# pragma: allowlist secret`
 
 Creates a new baseline including all currently detected secrets, ensuring they won’t block future commits.
-`detect-secrets scan > .secrets.baseline`
+
+`detect-secrets scan > .secrets.baseline` or
+`hook-init`
 
 You can run a test scan of the current folder to check if there might be sensitive data that could block future commits run:
 
