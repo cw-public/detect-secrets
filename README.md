@@ -201,7 +201,7 @@ The pre-commit configuration file. It enables the remote execution from a remote
 ```
 
 The `.secrets.baseline` acts as an "allowlist". Detect-secrets is a scanning Tool every time something gets pushed the entire codebase gets scanned.
-Since its not possible to detect 100% of all secrets it might happen that something triggers a so called *False Positive*. Its basilcy something
+Since its not possible to detect 100% of all secrets it might happen that something triggers a so called *False Positive*. Its basically something
 that looks like a secret but is not. Lets say a random hash needed in a Code. Every time the scan would run that hash would be a reason for the Commit to not go through.
 To avoid those cases this hash would get registered in the `.secrets.baseline` everything inside there is assumed to be something that might look sensitive but in reality is not.
 
@@ -218,7 +218,7 @@ If you are working in a repository that already contains these two files, it is 
 > **ℹ️ Info**
 > 
 > If `hook-init` is not found in the current Shell Session, you should be able to update the tools by running
-> `. $PFOPILE`
+> `. $PROFILE`
 > `Update-SessionPath`
 
 `Update-SessionPath` is another custom function inside `$PROFILE` the purpose of this function is to enable `hook-init` by communicating the updated PATH variables in the current working Session.
